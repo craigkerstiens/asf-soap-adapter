@@ -58,7 +58,18 @@ module Salesforce
       #result this.connection.binding.logout(Hash.new)
     end
 
-    establish_connection "salesforce-default-realm"
+    database_com_url = URI.parse(ENV["DATABASE_COM_URL"])
+    raise "Set DATABASE_COM_URL" if database_com_url.nil?
+    username = URI.unescape(database_com_url.user)
+    password = URI.unescape(database_com_url.password)
+
+    params = {:adapter => "activesalesforce",
+      :url => "https://login.salesforce.com/services/Soap/u/20.0",
+      :username => username,
+      :password => password
+    }
+
+    establish_connection(params)
   
     set_table_name 'salesforce_sf_bases'
 
