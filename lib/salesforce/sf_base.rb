@@ -60,8 +60,8 @@ module Salesforce
 
     database_com_url = URI.parse(ENV["DATABASE_COM_URL"])
     raise "Set DATABASE_COM_URL" if database_com_url.nil?
-    username = URI.unescape(database_com_uri.user)
-    password = URI.unescape(database_com_uri.password)
+    username = URI.unescape(database_com_url.user)
+    password = URI.unescape(database_com_url.password)
 
     params = {:adapter => "activesalesforce",
       :url => "https://login.salesforce.com/services/Soap/u/20.0",
