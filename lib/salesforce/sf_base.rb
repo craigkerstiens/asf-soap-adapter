@@ -62,12 +62,14 @@ module Salesforce
     raise "Set DATABASE_COM_URL" if database_com_url.nil?
     username = URI.unescape(database_com_uri.user)
     password = URI.unescape(database_com_uri.password)
-    
-    establish_connection {:adapter => "activesalesforce",
+
+    params = {:adapter => "activesalesforce",
       :url => "https://login.salesforce.com/services/Soap/u/20.0",
       :username => user,
       :password => password
     }
+
+    establish_connection(params)
   
     set_table_name 'salesforce_sf_bases'
 
