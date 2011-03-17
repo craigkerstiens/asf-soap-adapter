@@ -65,7 +65,7 @@ module Salesforce
 
     params = {:adapter => "activesalesforce",
       :url => "https://login.salesforce.com/services/Soap/u/20.0",
-      :username => user,
+      :username => username,
       :password => password
     }
 
