@@ -76,6 +76,7 @@ module ActiveRecord
       client_id = config[:client_id]
 	  username = config[:username].to_s
       password = config[:password].to_s
+	  p '!!!!!!!!-----------!!!!!!!!!'
 	  p username
 	  p password
 
