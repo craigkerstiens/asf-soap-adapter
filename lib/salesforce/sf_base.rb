@@ -39,6 +39,7 @@ module Salesforce
     # The context can be changed for 1) a single SF class. Or 2) the root (SfObject),
     # it will affect every other class inherited from the SfObject.
     def self.login(user, pass, token)
+      p '!!!!!!!!!!!-------------!!!!!!!!!!!!'
       p user
       p pass
       p token
