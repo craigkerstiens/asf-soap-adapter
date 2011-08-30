@@ -74,8 +74,10 @@ module ActiveRecord
 
       sid = config[:sid]
       client_id = config[:client_id]
-      username = config[:username].to_s
+	  username = config[:username].to_s
       password = config[:password].to_s
+	  p username
+	  p password
 
       # Recording/playback support
       recording_source = config[:recording_source]
